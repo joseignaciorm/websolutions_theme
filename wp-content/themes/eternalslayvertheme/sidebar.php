@@ -12,12 +12,18 @@
             ?>
 
             <?php the_permalink() . '<br><br>'; ?> <br>
+            <?php the_post_thumbnail(); ?> <br><br>
+            <?php echo get_the_post_thumbnail_url(); ?> <br><br>
+            <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo get_the_title(); ?>">
 
-            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+            <h2>
+                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+
+            </h2>
             <?php the_excerpt(); ?>
             
         </article>
-
+  
 
             <?php endwhile; else: ?>
 

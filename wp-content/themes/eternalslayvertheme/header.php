@@ -14,12 +14,23 @@
 <!-- MAIN CONTAINER -->
 <div class="main__container">
 
+<!-- Cabecera multimedia de WordPress -->
+<?php get_header('wordpress') ?>
+
 <!-- HEADER -->
 <header class="main-header">
     <!-- main-header__section -->
     <div class="l-container main-header__section">
         <div class="img-logo-content">
-        <a href="home"><img class="img-logo" src="assets/img/Logo-ChipsDesings-Sep-2019.png" alt="Logo chips designs"></a>
+            <?php
+                if(has_custom_logo()):
+                    the_custom_logo();
+                else:
+                    echo '<a href="'.esc_url(home_url('/')).'">'.
+                    get_bloginfo('name').'</a>';
+                endif;
+            ?>
+        
         </div>
     
         <div class="navbar-toggle" id="navbar-toggle"></div>

@@ -7,7 +7,7 @@
  * @package WordPress
  * @subpackage Eternal Slavery Theme
  * @since 1.0.0
- * @version 1.0.0
+ * @version 1.2.0
  */
 
  /* *********** Métodos y funciones usadas en este fichero *********** 
@@ -44,10 +44,13 @@
  add_action( 'wp_enqueue_scripts', 'eternalSlavery_scripts' );
 
 
- /* *** Activacion de HTML5 e Imágen destacada *** */
+ /* *** Activacion de HTML5 e IMAGEN DESTACADA *** */
  if(!function_exists('eternalSlavery_setup')):
       function eternalSlavery_setup() {
-         add_theme_support('post_thumbnails');
+         // https://developer.wordpress.org/reference/functions/add_theme_support/
+         // add_theme_support(); => Función que activa y desactiva funcionalidades de WordPress
+         // Personalización imágen destacada
+         add_theme_support('post-thumbnails');
 
          add_theme_support('html5', array(
             'comment-list',
@@ -56,8 +59,40 @@
             'gallery',     // Las galerías
             'caption'   // Las etiquetas
          ));
+
+         // Configuración logo personalizado
+         add_theme_support('custom-logo', array(
+            // Establecemos altura y anchura
+            'height'       => 100,
+            'width'        => 100,
+            'flex-height'  => true, // Con esta opción damos flexibilidad para customizar tamaño desde el dashboard
+            'flex-width'   => true  // Con esta opción damos flexibilidad para customizar tamaño desde el dashboard
+         ));
+
+         // Fondo y cabecera multimedia
+         add_theme_support('custom-background', array(
+            // Establecemos propiedades
+            // get_template_directory_uri(); Deuelve Url desde instalación de WordPress hasta la carpeta del theme
+            'default-color'  => 'DDD', // Establece color de fonde. Debe estar en HEX
+            'default-image'  => get_template_directory_uri() . '/img/Diseño-web.jpg', // Puede ser png o jpg
+            'default-repeat' => 'not-repeat', 
+            'default-position-x' => "",
+            'default-position-y' => "",
+            'default-size' => "",
+            'default-attachment' => 'fixed'
+         ));
+
+         // Activa la actualización selectiva de widgets desde el personalizador
+         add_theme_support('customize-selective-refresh-widgets');
+
       }
  endif;
+
+ add_action('after_setup_theme', 'eternalSlavery_setup'); // Evento after_setup_theme ocurre cuando WordPress ha terminado de cargar la plantilla
+
+  /* *** END Activacion de HTML5 e IMAGEN DESTACADA *** */
+
+
 
  /* *** Alta Menús en Dashborad *** */
  if(!function_exists('eternalSlavery_menus')):
@@ -90,4 +125,9 @@ endif;
 /* *** Asociación de la acción del FOOTER WIDGETS *** */
  add_action('widgets_init', 'eternalSlavery_register_footer');
 
+/* *** END Registro de WIDGETS *** */
 
+// Carpeta inc es por convensión donde se incluyen archivos desde el functions.php
+require_once get_template_directory().'/inc/custom-header.php';
+
+require_once get_template_directory().'/inc/customizer.php';
