@@ -1,6 +1,7 @@
 
 <footer class="footer--container">
             <section class="l-section l-container footer__before">
+            <?php if ( is_active_sidebar( 'footer_widget' ) ) { ?>
                 <div class="footer__info col__one">
                     <h4 class="footer__info--tittle">Chip Designs</h4>
                     <p class="footer__info--txt">
@@ -35,16 +36,26 @@
                         <li class="footer__info--list"><a href="" class="footer__info--link">Quiero mejorar el tráfico de mi sitio web</a></li>
                     </ul>
                 </div>
+                <?php } ?>
             </section>
             <section class="l-section l-container footer__after">
                 <div class="footer__rights">&copy; <?php echo date('Y') . ' -'; ?> Diseño web por Nacho</div>
-                <div class="social_content">
+                <div class="social_content l-section">
+                <p>Área de menú social media del personalizador WP</p>
                     <?php 
                         wp_nav_menu(array(
                             'theme_location'    => 'social_menu',
                             'container'         => 'nav'
                         ));
                     ?>
+                </div>
+                <div class="widgets l-section">
+                    <?php if ( is_active_sidebar( 'footer_widget' ) ) { ?>
+	                    <ul id="sidebar l-section">
+                            <p>Área de widgets del personalizador WP</p>
+		                    <?php dynamic_sidebar( 'footer_widget' ); ?>
+	                    </ul>
+                    <?php } ?>
                 </div>
             </section>
         </footer>

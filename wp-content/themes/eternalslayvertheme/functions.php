@@ -108,16 +108,26 @@
  add_action('init', 'eternalSlavery_menus');
 
 
-  /* *** Registro de WIDGETS *** */
+/* *** Registro de WIDGETS *** */
 if(!function_exists('eternalSlavery_register_footer')):
    function eternalSlavery_register_footer() {
       register_sidebar(array(
          'name'         => __('Main footer widget', 'EternalSlaveryTheme'),
          'id'           => 'footer_widget',
          'description'  => __('Este es el contenedor de widgets del footer', 'EternalSlaveryTheme'),
-         'before_widget' => '<div id"%1$s" class="footer__info col__ %2$s">',
-         'after_widget'  => '</div>',
-         'before_title'  => '<h4 class="footer__info--tittle">',
+         'before_widget' => '<article id"%1$s" class="footer__info col__ %2$s">',
+         'after_widget'  => '</article>',
+         'before_title'  => '<h4 class="footer__info--title">',
+         'after_title'   => '</h4>'
+      ));
+
+      register_sidebar(array(
+         'name'         => __('Second footer widget', 'EternalSlaveryTheme'),
+         'id'           => 'second_footer_widget',
+         'description'  => __('Este es el contenedor de widgets del footer secundario', 'EternalSlaveryTheme'),
+         'before_widget' => '<article id"%1$s" class="footer__info col__ %2$s">',
+         'after_widget'  => '</article>',
+         'before_title'  => '<h4 class="footer__info--title">',
          'after_title'   => '</h4>'
       ));
    }
