@@ -1,0 +1,13 @@
+/* *** Estilos para el admin de WordPress *** */
+
+body#tinymce.wp-editor {
+    font-family: var(--body-font);
+}
+
+body#tinymce.wp-editor a {
+    color: var(--color-texto);
+}
+
+body#tinymce.wp-editor a:hover {
+    color: var(--color-enfasis);
+}

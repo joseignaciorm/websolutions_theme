@@ -1,0 +1,43 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: Inglés de Estados Unidos\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Language: en_US\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#. Text in function
+#: eternalslayvertheme/functions.php:1
+msgid "Este es el contenedor de widgets del footer"
+msgstr "This is the footer widgets container"
+
+#. Text in function
+#: eternalslayvertheme/functions.php:1
+msgid "Este es el contenedor de widgets del footer secundario"
+msgstr "This is the Secondary footer widgets container"
+
+#. Text in function
+#: eternalslayvertheme/functions.php:1
+msgid "Main footer widget"
+msgstr "The Main footer widget"
+
+#. Text in function
+#: eternalslayvertheme/functions.php:1
+msgid "Menú Principal"
+msgstr "Main Menu"
+
+#. Text in function
+#: eternalslayvertheme/functions.php:1
+msgid "Menú redes sociales"
+msgstr "Social Media Menu"
+
+#. Text in function
+#: eternalslayvertheme/functions.php:1
+msgid "Second footer widget"
+msgstr "The Secondary footer widget"

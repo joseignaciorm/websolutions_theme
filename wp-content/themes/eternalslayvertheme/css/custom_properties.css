@@ -1,0 +1,69 @@
+/* ********* Custom Properties *********** */
+
+:root {
+    --scrollBar: 13px; }
+  
+  :root {
+    /* Paleta de colores SCSS */
+    --color-principal: #FFB80C;
+    --color-principal-alt: #F2A30C;
+    --color-secundario: #FFE23F;
+    --color-secundario-alt: #C6B031;
+    --color-terciario: #f06850;
+    --color-terciario-alt-1: #E5362D;
+    --color-terciario-alt-2: #DB1F15;
+    --color-terciario-2: #2cb5e8;
+    --color-enfasis: #ff8000;
+    --color-enfasis-alt: #E07200;
+    --color-enfasis-alt-secondary: #ff6811;
+    --color-enfasis: #86f5cc;
+    --color-enfasis-alt-2: #19e098;
+    --color-enfasis-alt-3: #19CC98;
+    --color-oscuro: rgb(41, 25, 14);
+    --color-oscuro-alt: rgba(41, 25, 14, .9);
+    --color-gray: #bdbdbd;
+    --color-gray-darker: #53575a;
+    --color-gray-light: #E0E1E1;
+    --color-border: #DFE0BF;
+    --color-texto: #382215;
+    --color-body-bg: #F1F5CA; }
+  
+  /* Paleta colores CSS */
+  :root {
+    --z-back: -10;
+    --z-normal: 1;
+    --z-tootip:10;
+    --z-fixed: 100;
+    --z-modal: 1000; }
+  
+  :root {
+    --heading-font: 'Lato', sans-serif;
+    --body-font: 'Lato', sans-serif;
+    --letter-spacing: -0.015em; }
+  
+  :root {
+    --body-font-size: 1rem;
+    --small-font-size: .75rem;
+    --medium-font-size: 1.4rem;
+    --large-font-size: 1.8rem;
+    --xxlarge-font-size: 2.2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.1rem;
+    --h4-font-size: 1rem; }
+    @media screen and (min-width: 640px) {
+      :root {
+        --h1-font-size: 1.5rem;
+        --h2-font-size: 2rem;
+        --h3-font-size: 1.7rem;
+        --h4-font-size: 1.4rem;
+        --body-font-size: 1rem;
+        --small-font-size: .8rem; } }
+    @media screen and (min-width: 1024px) {
+      :root {
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 2.2rem;
+        --h3-font-size: 2rem;
+        --h4-font-size: 1.7rem;
+        --body-font-size: 1.2rem;
+        --small-font-size: .9rem; } }

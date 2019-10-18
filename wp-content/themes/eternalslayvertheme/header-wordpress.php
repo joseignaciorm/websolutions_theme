@@ -1,7 +1,11 @@
 <header class="WP-Header">
     <?php
         if(has_custom_header()):
-            the_custom_header_markup(); // Ejecuta el código HTML que genera el header
+    ?>
+        <div class="top-header">
+            <?php the_custom_header_markup(); // Ejecuta el código HTML que genera el header ?>
+        </div>
+    <?php
         endif;
     ?>
 

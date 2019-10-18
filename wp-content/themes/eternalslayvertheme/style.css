@@ -8,7 +8,7 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, left-sidebar, full-width, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, theme-options, translation-ready
-Text Domain: EternalSlaveryTheme
+Text Domain: EST
 */
 /*# sourceMappingURL=css/style.css.map */
 
@@ -22,11 +22,13 @@ Text Domain: EternalSlaveryTheme
 /* VARIABLES CSS */
 /* Variables SCSS */
 
+
+/* ************ Comentamos para pasarlo al css custom properties.css de éste proyecto
 :root {
   --scrollBar: 13px; }
 
 :root {
-  /* Paleta de colores SCSS */
+  // Paleta de colores SCSS 
   --color-principal: #FFB80C;
   --color-principal-alt: #F2A30C;
   --color-secundario: #FFE23F;
@@ -50,7 +52,7 @@ Text Domain: EternalSlaveryTheme
   --color-texto: #382215;
   --color-body-bg: #F1F5CA; }
 
-/* Paleta colores CSS */
+// Paleta colores CSS 
 :root {
   --z-back: -10;
   --z-normal: 1;
@@ -89,6 +91,8 @@ Text Domain: EternalSlaveryTheme
       --h4-font-size: 1.7rem;
       --body-font-size: 1.2rem;
       --small-font-size: .9rem; } }
+      
+ Fín css custom properties.css de éste proyecto****************** */
 
 /* ************** Settings base - theme and layout *************** */
 /* Estilos base generales */
@@ -142,6 +146,10 @@ a {
   color: var(--color-texto);
   display: inline-block;
   font-size: 1.2em; }
+
+a:hover {
+  color: var(--color-enfasis);
+}
 
 img {
   max-width: 100%;
@@ -949,7 +957,7 @@ img {
             width: 90%; } }
       .main_banner .main_banner__slider--slider-btns {
         position: absolute;
-        top: 50%;
+        top: calc(300px + 50%);
         width: 100%;
         padding: 20px;
         z-index: var(z-modal);
@@ -1766,6 +1774,17 @@ img {
   height: 100vh;
   font-size: 5vw;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Top header */
+.WP-Header {
+  height: 350px;
+}
+.top-header {
+  height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;

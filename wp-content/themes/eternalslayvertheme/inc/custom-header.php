@@ -7,8 +7,8 @@ if(!function_exists('eternalSlavery_custom_header')):
         add_theme_support('custom-header', apply_filters('eternalSlavery_custom_header_args', array(
             'default-image'         => get_template_directory_uri() . '/img/header-image.jpeg', // Puede ser png o jpg
             'default-text-color'    => 'F60', // Establece color de texto. Debe estar en HEX
-            'width'                 => 1200, 
-            'height'                => 720,
+            'width'                 => 450, 
+            'height'                => 450,
             'flex-width'            => true,
             'flex-height'           => true,
             'video'                 => true,
@@ -33,3 +33,5 @@ endif;
 
 <?php
     endif;
+
+    ?>

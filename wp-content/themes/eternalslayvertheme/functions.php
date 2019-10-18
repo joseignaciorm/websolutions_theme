@@ -5,9 +5,9 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package WordPress
- * @subpackage Eternal Slavery Theme
+ * @subpackage eternalslayvertheme
  * @since 1.0.0
- * @version 1.2.0
+ * @version 1.3.0
  */
 
  /* *********** Métodos y funciones usadas en este fichero *********** 
@@ -28,14 +28,15 @@
  
  if(!function_exists('eternalSlavery_scripts')):
    function eternalSlavery_scripts() {
-      wp_register_style('google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat', array(), '1.0.0','all');
+      wp_register_style('google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat&display=swap', array(), '1.0.0','all');
 
        wp_register_style('style', get_stylesheet_uri(), array('google-fonts'), '1.0.0', 'all'); 
-
+       wp_register_style('custom-properties', get_stylesheet_directory_uri().'/css/custom_properties.css', array(), '1.0.0', 'all');
        wp_register_script('scripts', get_template_directory_uri().'/scripts.js', array('jquery'), '1.0.0', true);
 
        wp_enqueue_style('google-fonts');
        wp_enqueue_style('style');
+       wp_enqueue_style('custom-properties');
        wp_enqueue_script('jquery');
        wp_enqueue_script('scripts');
     }
@@ -47,6 +48,15 @@
  /* *** Activacion de HTML5 e IMAGEN DESTACADA *** */
  if(!function_exists('eternalSlavery_setup')):
       function eternalSlavery_setup() {
+
+         //Soporte para traducciones
+            //https://developer.wordpress.org/themes/functionality/internationalization/
+            //https://make.wordpress.org/polyglots/handbook/
+         //Herramientas
+            //https://www.icanlocalize.com/tools/php_scanner
+            //https://poedit.net/
+         load_theme_textdomain( 'EST', get_template_directory() . '/languages' );
+
          // https://developer.wordpress.org/reference/functions/add_theme_support/
          // add_theme_support(); => Función que activa y desactiva funcionalidades de WordPress
          // Personalización imágen destacada
@@ -98,8 +108,8 @@
  if(!function_exists('eternalSlavery_menus')):
    function eternalSlavery_menus() {
       register_nav_menus(array(
-         'main_menu'    => __('Menú Principal', 'EternalSlaveryTheme'),
-         'social_menu'  => __('Menú redes sociales', 'EternalSlaveryTheme')
+         'main_menu'    => __('Menú Principal', 'EST'),
+         'social_menu'  => __('Menú redes sociales', 'EST')
       ));
    }
  endif;
@@ -112,9 +122,9 @@
 if(!function_exists('eternalSlavery_register_footer')):
    function eternalSlavery_register_footer() {
       register_sidebar(array(
-         'name'         => __('Main footer widget', 'EternalSlaveryTheme'),
+         'name'         => __('Main footer widget', 'EST'),
          'id'           => 'footer_widget',
-         'description'  => __('Este es el contenedor de widgets del footer', 'EternalSlaveryTheme'),
+         'description'  => __('Este es el contenedor de widgets del footer', 'EST'),
          'before_widget' => '<article id"%1$s" class="footer__info col__ %2$s">',
          'after_widget'  => '</article>',
          'before_title'  => '<h4 class="footer__info--title">',
@@ -122,9 +132,9 @@ if(!function_exists('eternalSlavery_register_footer')):
       ));
 
       register_sidebar(array(
-         'name'         => __('Second footer widget', 'EternalSlaveryTheme'),
+         'name'         => __('Second footer widget', 'EST'),
          'id'           => 'second_footer_widget',
-         'description'  => __('Este es el contenedor de widgets del footer secundario', 'EternalSlaveryTheme'),
+         'description'  => __('Este es el contenedor de widgets del footer secundario', 'EST'),
          'before_widget' => '<article id"%1$s" class="footer__info col__ %2$s">',
          'after_widget'  => '</article>',
          'before_title'  => '<h4 class="footer__info--title">',
@@ -141,3 +151,10 @@ endif;
 require_once get_template_directory().'/inc/custom-header.php';
 
 require_once get_template_directory().'/inc/customizer.php';
+
+require_once get_template_directory().'/inc/custom-login.php';
+
+require_once get_template_directory().'/inc/custom-admin.php';
+
+
+?>
